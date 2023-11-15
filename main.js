@@ -4,6 +4,8 @@ const SCISSORS = "scissors";
 const PLAYER = "player";
 const COMPUTER = "computer";
 const VALIDCHOICE = [ROCK, PAPER, SCISSORS]
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
 
@@ -36,6 +38,23 @@ let computerChoice = getComputerChoice();
 let playerChoice = getPlayerChoice();
 console.log("Player Chooses: " + playerChoice.toUpperCase() + "\nComputer Chooses: " + computerChoice.toUpperCase());
 
-function playRound(playerChoice, computerSelection) {
+playRound(playerChoice, computerChoice);
+
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) 
+    {
+        console.log("TIE GAME");
+    }
+
+    else if (playerChoice === ROCK && computerChoice === SCISSORS ||
+        playerChoice === PAPER && computerChoice === ROCK ||
+        playerChoice === SCISSORS && computerChoice === PAPER) {
+            playerScore++;
+            console.log("Player wins! Player Score: " + playerScore)
+        }
+    else {
+        computerScore++
+        console.log("Computer wins! Computer Score: " + computerScore)
+    }
 
 } 
