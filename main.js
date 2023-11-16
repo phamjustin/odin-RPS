@@ -53,16 +53,16 @@ function playRound() {
         playerChoice === PAPER && computerChoice === ROCK ||
         playerChoice === SCISSORS && computerChoice === PAPER) {
             playerScore++;
-            console.log("Player wins!" + printScore());
+            console.log("Player wins!");
             printScore();
         }
     else {
         computerScore++
-        console.log("Computer wins!" + printScore());
+        console.log("Computer wins!");
         printScore();
     }
 } 
 
 function printScore(){
-    console.log("Score: " + playerScore + "- " + computerScore +"\n");
+    console.log("Score: " + playerScore + "- " + computerScore);
 }
