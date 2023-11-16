@@ -8,7 +8,6 @@ let playerScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-
     let randNum = Math.floor(Math.random() * 3);
     let choice = VALIDCHOICE[randNum];
     return choice;
@@ -31,14 +30,6 @@ function getPlayerChoice() {
     }
 }
 
-
-
-playRound();
-playRound();
-playRound();
-playRound();
-playRound();
-
 function playRound() {
     let computerChoice = getComputerChoice();
     let playerChoice = getPlayerChoice();
@@ -46,23 +37,36 @@ function playRound() {
 
     if (playerChoice === computerChoice) 
     {
-        console.log("TIE GAME"); 
-        printScore();
+        console.log("It's a tie round! \nScore: \n   Player " + playerScore + "\n   Computer " + computerScore); 
     }
     else if (playerChoice === ROCK && computerChoice === SCISSORS ||
         playerChoice === PAPER && computerChoice === ROCK ||
         playerChoice === SCISSORS && computerChoice === PAPER) {
             playerScore++;
-            console.log("Player wins!");
-            printScore();
+            console.log("Player wins the round! \nScore: \n   Player " + playerScore + "\n   Computer " + computerScore);
         }
     else {
         computerScore++
-        console.log("Computer wins!");
-        printScore();
+        console.log("Computer wins the round! \nScore: \n   Player " + playerScore + "\n   Computer " + computerScore);
     }
 } 
 
-function printScore(){
-    console.log("Score: " + playerScore + "- " + computerScore);
+function playGame(){
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+
+    if (playerScore === computerScore){
+        console.log("IT'S A TIE GAME THERE'S NO WINNER!!!!!!");
+    }
+    else if (playerScore > computerScore){
+        console.log("PLAYER WINS THE GAME!!!!!!");
+    }
+    else{
+        console.log("COMPUTER WINS THE GAME!!!!!!")
+    }
 }
+
+playGame();
