@@ -29,32 +29,40 @@ function getPlayerChoice() {
         case SCISSORS:
             return SCISSORS;        
     }
-
 }
 
 
 
-let computerChoice = getComputerChoice();
-let playerChoice = getPlayerChoice();
-console.log("Player Chooses: " + playerChoice.toUpperCase() + "\nComputer Chooses: " + computerChoice.toUpperCase());
+playRound();
+playRound();
+playRound();
+playRound();
+playRound();
 
-playRound(playerChoice, computerChoice);
+function playRound() {
+    let computerChoice = getComputerChoice();
+    let playerChoice = getPlayerChoice();
+    console.log("Player Chooses: " + playerChoice.toUpperCase() + "\nComputer Chooses: " + computerChoice.toUpperCase());
 
-function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) 
     {
-        console.log("TIE GAME");
+        console.log("TIE GAME"); 
+        printScore();
     }
-
     else if (playerChoice === ROCK && computerChoice === SCISSORS ||
         playerChoice === PAPER && computerChoice === ROCK ||
         playerChoice === SCISSORS && computerChoice === PAPER) {
             playerScore++;
-            console.log("Player wins! Player Score: " + playerScore)
+            console.log("Player wins!" + printScore());
+            printScore();
         }
     else {
         computerScore++
-        console.log("Computer wins! Computer Score: " + computerScore)
+        console.log("Computer wins!" + printScore());
+        printScore();
     }
-
 } 
+
+function printScore(){
+    console.log("Score: " + playerScore + "- " + computerScore +"\n");
+}
