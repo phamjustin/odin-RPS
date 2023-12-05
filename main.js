@@ -13,7 +13,7 @@ function getComputerChoice() {
     return choice;
 }
 
-function getPlayerChoice() {
+/*function getPlayerChoice() {
     let choice;
     while (true){
         choice = prompt("Rock, Paper, or Scissors?").toLowerCase();
@@ -28,7 +28,9 @@ function getPlayerChoice() {
         case SCISSORS:
             return SCISSORS;        
     }
-}
+} */
+
+
 
 function playRound() {
     let computerChoice = getComputerChoice();
@@ -52,11 +54,7 @@ function playRound() {
 } 
 
 function playGame(){
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
+
 
     if (playerScore === computerScore){
         console.log("IT'S A TIE GAME THERE'S NO WINNER!!!!!!");

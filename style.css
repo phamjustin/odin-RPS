@@ -1,0 +1,14 @@
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Choices{
+    align-self: center;
+}
+
+button {
+    margin: 24px;
+}
+
