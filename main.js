@@ -68,3 +68,6 @@ function playGame(){
 }
 
 playGame();
+
+/*
+const rockButton = document.getElementById('rockButton')
